@@ -5,30 +5,23 @@
  */
 int main(void)
 {
-	int i,j;
-
-	for (i = 48; i < 58; i++)
+	int i;
+	int j;
+	
+	i = 48;
+	while (i < 58)
 	{
-		for (j = i; j < 58; j++)
+		j = 48;
+		while (j < 58)
 		{
-			if(i == j)
-			{
-				continue;
-			}
-
 			putchar(i);
 			putchar(j);
-
-			if(i == 56 && j == 57)
-			{
-				break;
-			}
-			else
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			j++;
+			putchar(',');
+			putchar(' ');
 		}
+		
+		i++;
 	}
 	putchar('\n');
 	return (0);
