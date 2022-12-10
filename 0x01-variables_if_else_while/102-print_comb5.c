@@ -12,7 +12,7 @@ int main(void)
 	{
 		for (j = i; j <= 99; j++)
 		{
-			if (j !=i)
+			if (j != i)
 			{
 				putchar(i / 10 + 48);
 				putchar(i % 10 + 48);
@@ -20,7 +20,7 @@ int main(void)
 				putchar(j / 10 + 48);
 				putchar(j % 10 + 48);
 
-				if (i * 100 + j ! = 9899)
+				if (i * 100 + j != 9899)
 				{
 					putchar(',');
 					putchar(' ');
