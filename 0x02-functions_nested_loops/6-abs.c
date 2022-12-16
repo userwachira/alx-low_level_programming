@@ -1,17 +1,17 @@
 #include "main.h"
 /**
  * _abs - prints the absolute value of an integer
- * @int: the number
+ * @x: the number
  * Return: 0 success *
  */
-int _abs(int)
+int _abs(int x)
 {
-	if (int < 0)
+	if (x < 0)
 	{
-		_putchar('int');
+		_putchar('x');
 	}
 	else
 	{
-		_putchar('int');
+		_putchar('x');
 	}
 }
