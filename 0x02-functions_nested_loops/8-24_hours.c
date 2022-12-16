@@ -11,7 +11,12 @@ void jack_bauer(void)
 	{
 		for (minute = 0; minute < 60; minute++)
 		{
-			_putchar('%02d:%02d\n', minute, hour);
+			_putchar('0' + hour / 10);
+			_putchar('0' + hours % 10);
+			_putchar(':');
+			_putchar('0' + minute / 10);
+			_putchar('0' + minute % 10);
+			_putchar('\n');
 		}
 	}
 }
