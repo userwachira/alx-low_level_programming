@@ -1,53 +1,50 @@
 #include "main.h"
 /**
- * strtow - splits a string into words
- * @string: string
- * Return: pointer to array of strings
+ * strtow - splits string into words
+ * @str: string
+ * Return: NULL if function fails, string is null or empty else return pointer
  */
 char **strtow(char *str)
 {
-	int i, j, k, word_count, word_len;
-	char **words;
+	int i, j, k, words = 0, len = 0;
+	char **arr;
 
-	if (!str || !*str)
-		return (NULL);
-	
-	while (*str == ' ')
-		str++;
-
-	word_count = 0;
-	for (i = 0; str[i]; i++)
-		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-			word_count++;
-
-	words = malloc((word_count + 1) * sizeof(char *));
-	if (!words)
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
-	j = 0;
 	for (i = 0; str[i]; i++)
+	{
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+			words++;
+	}
+
+	arr = (char **)malloc(sizeof(char *) * (words + 1));
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0, k = 0; str[i]; i++)
 	{
 		if (str[i] != ' ')
 		{
-			word_len = 0;
-			for (k = 1; str[k] && str[k] != ' '; k++)
-				word_len++;
-
-			words[j] = malloc((word_len + 1) * sizeof(char));
-			if (!words[j])
+			for (j = i; str[j] && str[j] != ' '; j++)
+				len++;
+			arr[k] = (char *)malloc(sizeof(char) * (len + 1));
+			if (arr[k] == NULL)
 			{
-				for (k = 0; k < j; k++)
-					free(words[k]);
-				free(words);
+				for (; k >= 0; k--)
+					free(arr[k]);
+				free(arr);
 				return (NULL);
 			}
-			for (k = 0; k < word_len; k++)
-				words[j][k] = str [i + k];
-			words[j][word_len] = '\0';
-			j++;
-			i += word_len - 1;
+
+			for (j = 0; j < len; j++)
+				arr[k][j] = str[i + j];
+			arr[k++][len] = '\0';
+			len = 0;
+			i = i + j - 1;
 		}
 	}
-	words[j] = NULL;
-	return (words);
+	arr[k] = NULL;
+	return (arr);
 }
+
