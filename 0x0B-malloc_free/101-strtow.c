@@ -11,6 +11,9 @@ char **strtow(char *str)
 
 	if (!str || !*str)
 		return (NULL);
+	
+	while (*str == ' ')
+		str++;
 
 	word_count = 0;
 	for (i = 0; str[i]; i++)
@@ -38,7 +41,6 @@ char **strtow(char *str)
 				free(words);
 				return (NULL);
 			}
-
 			for (k = 0; k < word_len; k++)
 				words[j][k] = str [i + k];
 			words[j][word_len] = '\0';
