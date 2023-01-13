@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * strow - splits a string into words
+ * strtow - splits a string into words
  * @string: string
  * Return: pointer to array of strings
  */
-char **strow(char *str)
+char **strtow(char *str)
 {
 	int i, j, k, word_count, word_len;
 	char **words;
