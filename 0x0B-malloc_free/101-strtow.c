@@ -36,12 +36,11 @@ char **strtow(char *str)
 				free(arr);
 				return (NULL);
 			}
-			for (j = 0; j < len; j++)
-				arr[k][j] = str[i + j];
-			arr[k][j] = '\0';
+			for (j = i; str[j] && str[j] != ' '; j++)
+				arr[k][j - 1] = str[j];
+			arr[k][j- 1] = '\0';
 			k++;
 			len = 0;
-			i = i + j;
 		}
 	}
 	arr[k] = NULL;
