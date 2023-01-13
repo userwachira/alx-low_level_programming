@@ -26,7 +26,6 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			len = 0;
 			for (j = i; str[j] && str[j] != ' '; j++)
 				len++;
 			arr[k] = (char *)malloc(sizeof(char) * (len + 1));
@@ -40,8 +39,10 @@ char **strtow(char *str)
 
 			for (j = 0; j < len; j++)
 				arr[k][j] = str[i + j];
-			arr[k][j] = '\0';
+			arr[k++][len] = '\0';
+			len = 0;
 			k++;
+			i = i + j - 1;
 		}
 	}
 	arr[k] = NULL;
