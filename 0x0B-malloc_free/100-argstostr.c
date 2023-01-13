@@ -1,5 +1,5 @@
 #include "main.h"
-#include <strlen.h>
+#include <string.h>
 /**
  * argstostr - concatenates arguements in the program
  * @ac: arguement which is an interger representing number of arg
