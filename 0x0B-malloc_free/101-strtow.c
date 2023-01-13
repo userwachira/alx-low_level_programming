@@ -21,7 +21,6 @@ char **strtow(char *str)
 	arr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (arr == NULL)
 	{
-		_putchar ('Falied\n');
 		return (NULL);
 	}
 
