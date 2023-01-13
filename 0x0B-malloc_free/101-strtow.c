@@ -1,50 +1,51 @@
 #include "main.h"
 /**
- * strtow - splits string into words
- * @str: string
- * Return: NULL if function fails, string is null or empty else return pointer
+ * strow - splits a string into words
+ * @string: string
+ * Return: pointer to array of strings
  */
-char **strtow(char *str)
+char **strow(char *str)
 {
-	int i, j, k, words = 0, len = 0;
-	char **arr;
+	int i, j, k, word_count, word_len;
+	char **words;
 
-	if (str == NULL || str[0] == '\0')
+	if (!str || !*str)
 		return (NULL);
 
+	word_count = 0;
 	for (i = 0; str[i]; i++)
-	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-			words++;
-	}
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+			word_count++;
 
-	arr = (char **)malloc(sizeof(char *) * (words + 1));
-	if (arr == NULL)
+	words = malloc((word_count + 1) * sizeof(char *));
+	if (!words)
 		return (NULL);
 
-	for (i = 0, k = 0; str[i]; i++)
+	j = 0;
+	for (i = 0; str[i]; i++)
 	{
 		if (str[i] != ' ')
 		{
-			for (j = i; str[j] && str[j] != ' '; j++)
-				len++;
-			arr[k] = (char *)malloc(sizeof(char) * (len + 1));
-			if (arr[k] == NULL)
+			word_len = 0;
+			for (k = 1; str[k] && str[k] != ' '; k++)
+				word_len++;
+
+			words[j] = malloc((word_len + 1) * sizeof(char));
+			if (!words[j])
 			{
-				for (; k >= 0; k--)
-					free(arr[k]);
-				free(arr);
+				for (k = 0; k < j; k++)
+					free(words[k]);
+				free(words);
 				return (NULL);
 			}
 
-			for (j = 0; j < len; j++)
-				arr[k][j] = str[i + j];
-			arr[k++][len] = '\0';
-			len = 0;
-			i = i + j - 1;
+			for (k = 0; k < word_len; k++)
+				words[j][k] = str [i + k];
+			words[j][word_len] = '\0';
+			j++;
+			i += word_len - 1;
 		}
 	}
-	arr[k] = NULL;
-	return (arr);
+	words[j] = NULL;
+	return (words);
 }
-
