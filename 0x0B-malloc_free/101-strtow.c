@@ -38,9 +38,10 @@ char **strtow(char *str)
 			}
 			for (j = 0; j < len; j++)
 				arr[k][j] = str[i + j];
-			arr[k++][len] = '\0';
+			arr[k][j] = '\0';
+			k++;
 			len = 0;
-			i = i + j - 1;
+			i = i + j;
 		}
 	}
 	arr[k] = NULL;
