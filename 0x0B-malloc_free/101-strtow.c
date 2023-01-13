@@ -41,7 +41,6 @@ char **strtow(char *str)
 				arr[k][j] = str[i + j];
 			arr[k++][len] = '\0';
 			len = 0;
-			k++;
 			i = i + j - 1;
 		}
 	}
