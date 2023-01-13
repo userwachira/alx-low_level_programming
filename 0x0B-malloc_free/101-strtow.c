@@ -21,9 +21,9 @@ char **strtow(char *str)
 	arr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (arr == NULL)
 	{
+		_putchar(char *\n);
 		return (NULL);
 	}
-
 	for (i = 0, k = 0; str[i]; i++)
 	{
 		if (str[i] != ' ')
