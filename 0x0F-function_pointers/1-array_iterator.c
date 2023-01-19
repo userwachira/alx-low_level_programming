@@ -5,7 +5,7 @@
  * @size: number of elements in the array
  * @action: pointer to the function
  */
-void array_iterator(int *array, size_t size, void (*action)(int));
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	size_t i;
 
