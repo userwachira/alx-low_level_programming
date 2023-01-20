@@ -25,7 +25,8 @@ int main(int agrc, char *agrv[])
 	}
 
 	for (i = 0; i < n; i++)
-		printf("%02hhx\n", main_ptr[i]);
+		printf("%02hhx", main_ptr[i]);
+	putchar('\n);
 
 	return (0);
 }
