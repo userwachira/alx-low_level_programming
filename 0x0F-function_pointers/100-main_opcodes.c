@@ -25,7 +25,12 @@ int main(int agrc, char *agrv[])
 	}
 
 	for (i = 0; i < n; i++)
-		printf("%02hhx\n", main_ptr[i]);
+	{
+		printf("%02hhx", main_ptr[i]);
+		if (i != n - 1)
+			printf(" ");
+	}
 
+	printf("\n");
 	return (0);
 }
