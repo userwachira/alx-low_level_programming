@@ -8,7 +8,7 @@
 int main(int agrc, char *agrv[])
 {
 	int a, b;
-	int (*operation)(int, int);
+	int (*op)(int, int);
 
 	if (agrc != 4)
 	{
@@ -22,7 +22,9 @@ int main(int agrc, char *agrv[])
 		exit(99);
 	}
 	
-	if (operation == NULL)
+	op = get_op_func(agrv[2]);
+
+	if (op == NULL)
 	{
 		printf("Error\n");
 		exit(99);
@@ -31,6 +33,6 @@ int main(int agrc, char *agrv[])
 	a = atoi(agrv[1]);
 	b = atoi(agrv[3]);
 	
-	printf("%d\n", operation(a, b));
+	printf("%d\n", op(a, b));
 	return (0);
 }
