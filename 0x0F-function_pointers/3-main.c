@@ -15,23 +15,21 @@ int main(int agrc, char *agrv[])
 		printf("Error\n");
 		exit(98);
 	}
-
-	a = atoi(agrv[1]);
-	b = atoi(agrv[3]);
 	
-	printf("%d\n", op(a,b));
-
+	if (agrv[2][1])
+	{
+		printf("Error\n");
+		exit(99);
+	
 	if (op == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*agrv[2] == '/' || *agrv[2] == '%') && b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-
+	a = atoi(agrv[1]);
+	b = atoi(agrv[3]);
+	
+	printf("%d\n", op(a, b);
 	return (0);
 }
