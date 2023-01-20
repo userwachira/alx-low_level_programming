@@ -14,19 +14,18 @@ int main(int agrc, char *agrv[])
 	if (agrc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
 	n = atoi(agrv[1]);
 	if (n < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
 	for (i = 0; i < n; i++)
-		printf("%02hhx", main_ptr[i]);
-	putchar('\n');
+		printf("%02hhx\n", main_ptr[i]);
 
 	return (0);
 }
