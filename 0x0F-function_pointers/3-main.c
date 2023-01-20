@@ -19,13 +19,13 @@ int main(int agrc, char *agrv[])
 	}
 
 	num1 = atoi(agrv[1]);
-	num2 = atoi(agrv[2]);
+	num2 = atoi(agrv[3]);
 	op_func = get_op_func(agrv[2]);
 
 	if (op_func == NULL)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	if ((*agrv[2] == '/' || *agrv[2] == '%') && num2 == 0)
