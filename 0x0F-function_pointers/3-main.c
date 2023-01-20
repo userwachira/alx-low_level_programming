@@ -15,13 +15,13 @@ int main(int agrc, char *agrv[])
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	if (agrv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	
+
 	op = get_op_func(agrv[2]);
 
 	if (op == NULL)
@@ -32,7 +32,7 @@ int main(int agrc, char *agrv[])
 
 	a = atoi(agrv[1]);
 	b = atoi(agrv[3]);
-	
+
 	printf("%d\n", op(a, b));
 	return (0);
 }
