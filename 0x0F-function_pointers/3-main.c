@@ -7,8 +7,8 @@
  */
 int main(int agrc, char *agrv[])
 {
-	int num1, num2, result;
-	int (*op_func)(int, int);
+	int a, b, result;
+	int (*op)(int, int);
 
 	if (agrc != 4)
 	{
@@ -16,23 +16,23 @@ int main(int agrc, char *agrv[])
 		exit(98);
 	}
 
-	num1 = atoi(agrv[1]);
-	num2 = atoi(agrv[3]);
-	op_func = get_op_func(agrv[2]);
+	a = atoi(agrv[1]);
+	b = atoi(agrv[3]);
+	op = get_op_func(agrv[2]);
 
-	if (op_func == NULL)
+	if (op == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*agrv[2] == '/' || *agrv[2] == '%') && num2 == 0)
+	if ((*agrv[2] == '/' || *agrv[2] == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	result = op_func(num1, num2);
+	result = op(a, b);
 	printf("%d\n", result);
 
 	return (0);
