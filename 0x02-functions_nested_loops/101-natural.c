@@ -5,20 +5,16 @@
  */
 int sumofmultiples(void)
 {
-	int a, b, sum1 = 0, sum2 = 0, sum3 = 0;
+	int b, sum = 0;
 
-	for (a = 0; a < 1024; a += 3)
+	for (b = 0; b < 1024; b++)
 	{
-		sum1 += a;
+		if (b % 3 == 0 || b % 5 == 0)
+		{
+			sum += b;
+		}
 	}
-
-	for (b = 0; b < 1024; b += 5)
-	{
-		sum2 += b;
-	}
-
-	sum3 = sum1 + sum2;
-	return (sum3);
+	return (sum);
 }
 /**
  * main - prints the sum of multiples

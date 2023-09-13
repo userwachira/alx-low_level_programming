@@ -1,12 +1,12 @@
 #include <stdio.h>
 /**
- * printfirst98fibonacci - prints the first 98 fibonacci
+ * printfirstnfibonacci - prints the first n fibonacci
  */
-void printfirst98fibonacci(void)
+void printfirstnfibonacci(void)
 {
 	int i;
 	long int a = 1, b = 2, next;
-	int n = 98;
+	int n = 100;
 
 	for (i = 0; i < n; i++)
 	{
@@ -30,6 +30,6 @@ void printfirst98fibonacci(void)
  */
 int main(void)
 {
-	printfirst98fibonacci();
+	printfirstnfibonacci();
 	return (0);
 }
