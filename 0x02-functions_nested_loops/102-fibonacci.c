@@ -7,13 +7,13 @@ void printfibonacci(void)
 	int n = 50;
 	int i;
 	long int a = 1, b = 2, next;
-	
+
 	printf("%ld, %ld, ", a, b);
-	
+
 	for (i = 2; i < n; i++)
 	{
 		next = a + b;
-		if (i < n -1)
+		if (i < n - 1)
 		{
 			printf("%ld, ", next);
 		}
