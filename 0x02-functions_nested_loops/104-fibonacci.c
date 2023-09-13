@@ -5,21 +5,24 @@
 void printfirstnfibonacci(void)
 {
 	int i;
-	long int a = 1, b = 2, next;
-	int n = 100;
+	unsigned long a = 1, b = 2;
+      	long unsigned int next;
+	int n = 98;
+
+	printf("%lu, %lu, ", a, b);
 
 	for (i = 0; i < n; i++)
 	{
+		next = a + b;
 		if (i < n - 1)
 		{
-			printf("%ld, ", a);
+			printf("%lu, ", next);
 		}
 		else
 		{
-			printf("%ld\n", a);
+			printf("%lu\n", next);
 		}
 
-		next = a + b;
 		a = b;
 		b = next;
 	}

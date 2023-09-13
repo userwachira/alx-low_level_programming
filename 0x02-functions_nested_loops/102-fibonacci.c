@@ -5,20 +5,23 @@
 void printfibonacci(void)
 {
 	int n = 50;
-	int i, a = 1, b = 2, next;
-
-	for (i = 0; i < n; i++)
+	int i;
+	long int a = 1, b = 2, next;
+	
+	printf("%ld, %ld, ", a, b);
+	
+	for (i = 2; i < n; i++)
 	{
-		if (i < n - 1)
+		next = a + b;
+		if (i < n -1)
 		{
-			printf("%d, ", a);
+			printf("%ld, ", next);
 		}
 		else
 		{
-			printf("%d\n", a);
+			printf("%ld\n", next);
 		}
 
-		next = a + b;
 		a = b;
 		b = next;
 
