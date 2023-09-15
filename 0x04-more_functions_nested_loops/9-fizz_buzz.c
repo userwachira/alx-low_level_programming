@@ -22,7 +22,14 @@ void printnumbersto100(void)
 		}
 		else
 		{
+			if (i < 100)
+			{
 			printf("%d ", i);
+			}
+			else
+			{
+				printf("%d", i);
+			}
 		}
 	}
 	printf("\n");
