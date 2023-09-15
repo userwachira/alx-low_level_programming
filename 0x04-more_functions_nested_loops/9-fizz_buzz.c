@@ -14,7 +14,14 @@ void printnumbersto100(void)
 		}
 		else if (i % 5 == 0)
 		{
+			if (i == 100)
+			{
+				printf("Buzz");
+			}
+			else
+			{
 			printf("Buzz ");
+			}
 		}
 		else if (i % 3 == 0)
 		{
@@ -22,14 +29,7 @@ void printnumbersto100(void)
 		}
 		else
 		{
-			if (i == 100)
-			{
-			printf("%d", i);
-			}
-			else
-			{
-				printf("%d ", i);
-			}
+			printf("%d ", i);
 		}
 	}
 	printf("\n");
